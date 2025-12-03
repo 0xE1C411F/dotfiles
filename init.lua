@@ -37,16 +37,4 @@ vim.cmd [[autocmd VimEnter * wincmd p]]
 vim.cmd [[command Q qa]]
 vim.cmd [[command Qw wqa]]
 
-require("lspconfig").clangd.setup{}
-require("lspconfig").rust_analyzer.setup{
-  settings = {
-    ["rust-analyzer"] = {
-      check = {
-        command = clippy;
-      },
-      diagnostics = {
-        enable = true;
-      }
-    }
-  }
-}
+vim.lsp.enable("clangd")
