@@ -55,6 +55,7 @@
     foot
     brave
     capitaine-cursors
+    nodejs_24
   ];
 
   system.stateVersion = "25.11";
