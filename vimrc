@@ -7,7 +7,6 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set colorcolumn=120
@@ -22,10 +21,7 @@ let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-let g:ale_fixers = {'cpp': ['clang-format',], 'rust': ['rustfmt',]}
-let g:ale_linters = {'rust': ['analyzer']}
-let g:ale_rust_rls_toolchain = 'stable'
-let g:ale_rust_analyzer_executable = 'rust-analyzer'
+let g:ale_fixers = {'cpp': ['clang-format',]}
 let g:ale_cpp_cc_options = '-Isrc'
 let g:ale_fix_on_save = 1
 
