@@ -9,6 +9,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+set notermguicolors
 set colorcolumn=120
 colorscheme e1c411f
 let g:airline_theme='e1c411f'
