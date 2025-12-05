@@ -51,11 +51,12 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
-    hyprland
     foot
     brave
-    capitaine-cursors
     nodejs_24
+    sway
+    zsh
+    oh-my-zsh
   ];
 
   system.stateVersion = "25.11";
