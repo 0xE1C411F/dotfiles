@@ -52,12 +52,24 @@
     neovim
     git
     foot
-    brave
+    firefox
     nodejs_24
     sway
     zsh
     oh-my-zsh
+    openrgb-with-all-plugins
   ];
+
+  services.hardware.openrgb.enable = true;
+  systemd.services.letThereBeLight = {
+    description = "Switch one";
+    wants = [ "openrgb.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.openrgb}/bin/openrgb -c 0000ff -m direct";
+    };
+  };
 
   system.stateVersion = "25.11";
 
