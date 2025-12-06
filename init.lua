@@ -26,8 +26,20 @@ require("nvim-tree").setup {
 vim.cmd [[nmap <F2> :NvimTreeFocus<CR>]]
 vim.cmd [[imap <F2> <Esc>:NvimTreeFocus<CR>]]
 
-vim.cmd [[nmap <F4> :NvimTreeToggle<CR>]]
-vim.cmd [[imap <F4> <Esc>:NvimTreeToggle<CR>]]
+vim.cmd [[nmap <F3> :NvimTreeToggle<CR>]]
+vim.cmd [[imap <F3> <Esc>:NvimTreeToggle<CR>]]
+
+vim.cmd [[nmap <F4> :tabnew<CR>:NvimTreeOpen<CR>]]
+vim.cmd [[imap <F4> <Esc>:tabnew<CR>:NvimTreeOpen<CR>]]
+
+vim.cmd [[nmap <F5> gT]]
+vim.cmd [[imap <F5> <Esc>gT]]
+
+vim.cmd [[nmap <F6> gt]]
+vim.cmd [[imap <F6> <Esc>gt]]
+
+vim.cmd [[nmap <F8> :windo bd<CR>]]
+vim.cmd [[imap <F8> <Esc>:windo bd<CR>]]
 
 vim.cmd [[nmap <F12> <C-]>]]
 vim.cmd [[imap <F12> <Esc><C-]>]]
