@@ -1,1 +1,3 @@
 waybar_scripts/procdata
+build/*
+!build/README.md
