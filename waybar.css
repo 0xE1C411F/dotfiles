@@ -9,9 +9,9 @@ window#waybar {
 }
 
 #custom-cpu-usage {
-  color: #3871ff;
+  color: #{{PRIMARY_ACCENT}};
 }
 
 #custom-mem-usage {
-  color: #ffa617;
+  color: #{{YELLOW}};
 }
