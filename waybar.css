@@ -1,0 +1,17 @@
+* {
+    font-family: "IosevkaNFM";
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+window#waybar {
+  background: #00000000;
+}
+
+#custom-cpu-usage {
+  color: #3871ff;
+}
+
+#custom-mem-usage {
+  color: #ffa617;
+}

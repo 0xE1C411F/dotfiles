@@ -1,0 +1,24 @@
+{
+  "output": "HDMI-A-1",
+  "position": "bottom",
+  "modules-left" : [
+    "custom/mem-usage"
+  ],
+
+  "modules-right" : [
+    "custom/cpu-usage"
+  ],
+
+  "custom/mem-usage": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/mem_usage.sh",
+    "interval": 3
+  },
+
+  "custom/cpu-usage": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/cpu_usage.sh",
+    "interval": 3
+  }
+}
+

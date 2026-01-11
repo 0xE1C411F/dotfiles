@@ -58,6 +58,8 @@
     zsh
     oh-my-zsh
     openrgb-with-all-plugins
+    htop
+    waybar
   ];
 
   services.hardware.openrgb.enable = true;
@@ -70,6 +72,8 @@
       ExecStart = "${pkgs.openrgb}/bin/openrgb -c 0000ff -m direct";
     };
   };
+
+  services.usbmuxd.enable = true;
 
   system.stateVersion = "25.11";
 

@@ -31,7 +31,10 @@ refresh_config syntax_cpp.vim ~/.config/nvim/after/syntax/cpp.vim
 refresh_config vimrc ~/.vimrc
 if $NIXOS; then
   refresh_config sway.config ~/.config/sway/config
+  refresh_config waybar.jsonc ~/.config/waybar/config.jsonc
+  refresh_config waybar.css ~/.config/waybar/style.css
   refresh_config terminal.ini ~/.config/foot/foot.ini
+  refresh_config waybar_scripts ~/.config/waybar/scripts
   sudo_refresh_config configuration.nix /etc/nixos/configuration.nix
   sudo nixos-rebuild switch
 fi
