@@ -2,7 +2,7 @@
 
 NIXOS=false
 GLOBAL_VARIABLES_FILE=global_variables.ini
-CONFIG_FOLDER=~/documents/projects/dotfiles
+CONFIG_FOLDER=$(echo ~/documents/projects/dotfiles)
 RUN=true
 
 while getopts "s:d" FLAG; do
@@ -19,7 +19,7 @@ while getopts "s:d" FLAG; do
 done
 
 substitute_variables() {
-  cp $CONFIG_FOLDER/$1 $CONFIG_FOLDER/build/$1
+  cp -r $CONFIG_FOLDER/$1 $CONFIG_FOLDER/build/$1
   SUBSTITUTIONS=$(grep -Eo "\{\{([A-Z_0-9]*)\}\}" $CONFIG_FOLDER/build/$1 | wc -l)
   ITERATIONS=$SUBSTITUTIONS
   while [ $SUBSTITUTIONS -gt 0 ] && [ $ITERATIONS -gt 0 ]; do
