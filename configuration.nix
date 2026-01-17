@@ -42,7 +42,7 @@
   users.users.e1c411f = {
     isNormalUser = true;
     description = "0xE1C411F";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio"];
     packages = with pkgs; [];
   };
 
@@ -60,6 +60,7 @@
     openrgb-with-all-plugins
     htop
     waybar
+    pavucontrol
   ];
 
   services.hardware.openrgb.enable = true;
@@ -69,11 +70,19 @@
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.openrgb}/bin/openrgb -c 0000ff -m direct";
+      ExecStart = "${pkgs.openrgb}/bin/openrgb -c {{PRIMARY_ACCENT}} -m direct";
     };
   };
 
   services.usbmuxd.enable = true;
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   system.stateVersion = "25.11";
 
