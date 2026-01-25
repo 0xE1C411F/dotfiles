@@ -45,6 +45,7 @@ substitute_variables_in_file() {
 substitute_variables() {
   if [ -d $1 ]; then
     echo "[INFO] Found directory $1"
+    mkdir -p $CONFIG_FOLDER/build/$1
     for ENTRY in $1/*; do
       echo "[INFO]    - $ENTRY"
       substitute_variables $ENTRY
