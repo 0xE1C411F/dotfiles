@@ -23,6 +23,9 @@ require("nvim-tree").setup {
     },
   },
 }
+
+require("neogen").setup {}
+
 vim.cmd [[nmap <F2> :NvimTreeFocus<CR>]]
 vim.cmd [[imap <F2> <Esc>:NvimTreeFocus<CR>]]
 
@@ -50,3 +53,7 @@ vim.cmd [[command Q qa]]
 vim.cmd [[command Qw wqa]]
 
 vim.lsp.enable("clangd")
+vim.diagnostic.enable()
+vim.diagnostic.config({
+  virtual_lines = true,
+})

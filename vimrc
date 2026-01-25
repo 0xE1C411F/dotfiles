@@ -1,12 +1,12 @@
 " :PlugInstall
 call plug#begin()
-Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'danymat/neogen'
 call plug#end()
 
 set notermguicolors
@@ -21,10 +21,6 @@ let g:airline#extensions#tabline#show_tab_count = 2
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-let g:ale_fixers = {'cpp': ['clang-format',]}
-let g:ale_cpp_cc_options = '-Isrc'
-let g:ale_fix_on_save = 1
 
 set incsearch
 set hlsearch
