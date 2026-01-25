@@ -14,6 +14,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
+  nix.settings.extra-experimental-features = ["nix-command" "flakes"];
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/London";
@@ -62,6 +63,13 @@
     waybar
     pavucontrol
   ];
+
+  #programs.nix-ld.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    enableZshIntegration = true;
+  };
 
   services.hardware.openrgb.enable = true;
   systemd.services.letThereBeLight = {
