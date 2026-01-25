@@ -18,8 +18,8 @@ while getopts "s:d" FLAG; do
   esac
 done
 
-substitute_variables() {
-  cp -r $CONFIG_FOLDER/$1 $CONFIG_FOLDER/build/$1
+substitute_variables_in_file() {
+  cp $CONFIG_FOLDER/$1 $CONFIG_FOLDER/build/$1
   SUBSTITUTIONS=$(grep -Eo "\{\{([A-Z_0-9]*)\}\}" $CONFIG_FOLDER/build/$1 | wc -l)
   ITERATIONS=$SUBSTITUTIONS
   while [ $SUBSTITUTIONS -gt 0 ] && [ $ITERATIONS -gt 0 ]; do
@@ -39,6 +39,18 @@ substitute_variables() {
   if [ $SUBSTITUTIONS -gt 0 ]; then
     echo "[ERROR] Circular references detected" 1>&2
     exit 109
+  fi
+}
+
+substitute_variables() {
+  if [ -d $1 ]; then
+    echo "[INFO] Found directory $1"
+    for ENTRY in $1/*; do
+      echo "[INFO]    - $ENTRY"
+      substitute_variables $ENTRY
+    done
+  else
+    substitute_variables_in_file $1
   fi
 }
 
