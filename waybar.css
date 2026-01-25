@@ -6,6 +6,7 @@
 
 window#waybar {
   background: #00000000;
+  color: #{{FOREGROUND}};
 }
 
 #custom-cpu-usage {
@@ -14,4 +15,11 @@ window#waybar {
 
 #custom-mem-usage {
   color: #{{YELLOW}};
+}
+
+#custom-internet.connected {
+  color: #{{GREEN}};
+}
+#custom-internet.disconnected {
+  color: #{{RED}};
 }
