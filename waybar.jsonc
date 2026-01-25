@@ -5,6 +5,10 @@
     "custom/mem-usage"
   ],
 
+  "modules-center" : [
+    "clock"
+  ],
+
   "modules-right" : [
     "custom/cpu-usage"
   ],
